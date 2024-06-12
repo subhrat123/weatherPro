@@ -1,14 +1,26 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect, useState } from 'react';
+import './App.css';
 
 function App() {
-  return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  )
+
+  const [image, setimage] = useState(clear)
+
+return (
+<>
+<div className=' h-full w-full bg-blue-400 flex justify-center'>
+  <div className=' flex '>
+    <div>
+      WeatherPro
+    </div>
+    <div>
+      <img src="" alt="search" />
+    </div>
+    
+    </div>
+</div>
+
+</>
+)
 }
 
-export default App
+export default App;
