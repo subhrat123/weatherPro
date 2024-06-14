@@ -18,7 +18,6 @@ function App() {
 
   const { Data, TimeZone } = useContext(forecastContext);
 
-  console.log(Data);
 
   const [input, setInput] = useState("");
 
@@ -69,9 +68,9 @@ function App() {
             currentInfo={main}
             visibility={vis}
           />
-          <div className=' flex flex-col  justify-center items-center'>
+          <div className=' flex flex-col backdrop-blur justify-center items-center'>
 
-            <div className=' text-3xl font-extrabold'>Forecast</div>
+            <div className=' text-3xl font-extrabold'>7 Day Forecast</div>
 
             <div className=' lg:w-[40vw] max-[900px]:w-[360px] h-auto flex justify-center flex-wrap items-center' >
 

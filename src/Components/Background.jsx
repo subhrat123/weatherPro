@@ -7,7 +7,7 @@ import Snow from '../assets/Images/Snow.jpg';
 import Stormy from '../assets/Images/Stormy.jpg';
 import Sunny from '../assets/Images/Sunny.jpg';
 import haze from '../assets/Images/haze.jpg'
-
+import Dust from '../assets/Images/Dust.jpg'
 
 
 const Background = ({image}) => {
@@ -18,11 +18,16 @@ const getimage=(im)=>{
     if(im.includes('clouds')) return Cloudy;
     if(im.includes('clear')) return Clear;
     if(im.includes('fog')) return Fog;
+    if(im.includes('mist')) return Fog;
     if(im.includes('rain')) return Rainy;
+    if(im.includes('drizzle')) return Rainy;
     if(im.includes('snow')) return Snow;
     if(im.includes('storm')) return Stormy;
+    if(im.includes('sand')) return Dust;
+    if(im.includes('dust')) return Dust;
     if(im.includes('sun')) return Sunny;
     if(im.includes('haze')) return haze;
+    if(im.includes('smoke')) return haze;
   }
 }
 

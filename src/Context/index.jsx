@@ -25,9 +25,12 @@ export const StateContextProvider = ({ children }) => {
         setVis(visibility);
     }
 
+    const apiKey=import.meta.env.VITE_API_KEY_1;
+
+    
     const currentWeather = async () => {
         try {
-            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=851b7202d57cca079cb54913d14b3b56&units=metric`);
+            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}&units=metric`);
             fetchedData(await res.json());
         }
         catch (e) {

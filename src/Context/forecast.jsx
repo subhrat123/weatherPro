@@ -7,6 +7,8 @@ export const ForecastProvider = ({ children, lat, lon }) => {
     const [Data, setData] = useState([]);
     const [TimeZone, setTimeZone] = useState("");
 
+    const apiKey=import.meta.env.VITE_API_KEY_2;
+
     const fetchedData = (info) => {
         const { timezone, daily } = info;
         setData(daily);
@@ -16,7 +18,7 @@ export const ForecastProvider = ({ children, lat, lon }) => {
     const fetchData = async (latitude, longitude) => {
         try {
             const res = await fetch(
-                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=1fa9ff4126d95b8db54f3897a208e91c&units=metric`
+                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=metric`
             );
             const data = await res.json();
             fetchedData(data);

@@ -11,6 +11,7 @@ import Haze from '../assets/Icon/Haze.png'
 const WeatherCard = ({ Place, windspeed, Weather, currentInfo, visibility }) => {
   const [icon, setIcon] = useState(sun);
   const [Time, setTime] = useState("");
+  
   useEffect(() => {
     const getWeatherIcon = (weather) => {
       switch (weather?.toLowerCase()) {
@@ -19,6 +20,8 @@ const WeatherCard = ({ Place, windspeed, Weather, currentInfo, visibility }) => 
         case 'storm':
           return storm;
         case 'fog':
+          return fog;
+        case 'mist':
           return fog;
         case 'rain':
           return rain;
