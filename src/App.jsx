@@ -38,7 +38,7 @@ function App() {
        
        
         <div className='p-4 w-full absolute m-6 top-0 flex justify-around'>
-          <div className='  font-bold text-2xl'>
+          <div className='  font-extrabold text-3xl'>
             WeatherPro App
           </div>
           <div className='border-2 rounded-xl p-2 bg-white flex'>
@@ -70,7 +70,7 @@ function App() {
           />
           <div className=' flex flex-col justify-center items-center'>
 
-            <div className=' text-3xl font-extrabold'>7 Day Forecast</div>
+            <div className=' text-3xl font-bold'>7 Day Forecast</div>
 
             <div className=' lg:w-[40vw] max-sm:w-[360px] h-auto flex justify-center flex-wrap items-center' >
 

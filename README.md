@@ -1,5 +1,5 @@
-# weather forecating web-app
-                               ...by subhrat verma
+ # weather forecating web-app
+                               ..by subhrat verma
 
 
 This app is created by using react.
@@ -9,10 +9,11 @@ It fetches weather data from the api's and display it.
 
 I have used two api's for weather fetching data.
 
-- # for current weather data(todays data) 
-- code in the file(src/Context/index.jsx) 
+ - For current weather data(todays data) 
+       - -code in the file   (.src/Context/index.jsx) 
 
-- # for 7 days forecast weather data 
-- code in the file(src/Context/forecast.jsx) 
+ - For 7 days forecast weather data 
+       - -code in the file   (.src/Context/forecast.jsx) 
+
 
 
