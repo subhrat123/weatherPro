@@ -1,5 +1,5 @@
 # weather forecating web-app
-                               ...by subhrat verma
+                               ..by subhrat verma
 
 
 This app is created by using react.
