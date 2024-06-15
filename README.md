@@ -10,9 +10,9 @@ It fetches weather data from the api's and display it.
 I have used two api's for weather fetching data.
 
  - For current weather data(todays data) 
-code in the file(src/Context/index.jsx) 
+- - code in the file(src/Context/index.jsx) 
 
  - For 7 days forecast weather data 
-code in the file(src/Context/forecast.jsx) 
+- - code in the file(src/Context/forecast.jsx) 
 
 
