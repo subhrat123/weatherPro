@@ -59,7 +59,7 @@ function App() {
             <img className='h-6 max-[1200]:h-4 p-1' src={search} alt="search" />
           </div>
         </div>
-        <div className=' absolute top-40  flex max-lg:flex-col justify-center items-center '>
+        <div className=' absolute top-40 max-md:w-[350px]  flex max-lg:flex-col justify-center items-center '>
 
           <WeatherCard
             Place={place}
@@ -68,11 +68,11 @@ function App() {
             currentInfo={main}
             visibility={vis}
           />
-          <div className=' flex flex-col backdrop-blur justify-center items-center'>
+          <div className=' flex flex-col justify-center items-center'>
 
             <div className=' text-3xl font-extrabold'>7 Day Forecast</div>
 
-            <div className=' lg:w-[40vw] max-[900px]:w-[360px] h-auto flex justify-center flex-wrap items-center' >
+            <div className=' lg:w-[40vw] max-sm:w-[360px] h-auto flex justify-center flex-wrap items-center' >
 
               {
                 Data?.slice(1, 7).map(curr => {
