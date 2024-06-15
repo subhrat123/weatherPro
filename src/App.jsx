@@ -41,11 +41,11 @@ function App() {
           <div className='  font-bold text-2xl'>
             WeatherPro App
           </div>
-          <div className='border-2 rounded-xl p-3 bg-white flex'>
+          <div className='border-2 rounded-xl p-2 bg-white flex'>
             <input
               type="text"
               placeholder='Search city'
-              className='focus:outline-none '
+              className='focus:outline-none w-28 '
               value={input}
               onChange={handleInputChange}
               onKeyUp={
