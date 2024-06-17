@@ -41,7 +41,7 @@ function App() {
           <div className='  font-extrabold text-3xl'>
             WeatherPro App
           </div>
-          <div className='border-2 rounded-xl p-2 bg-white flex'>
+          <div className='border-2 rounded-xl  max-sm:h-8 bg-white flex justify-center items-center'>
             <input
               type="text"
               placeholder='Search city'
@@ -57,7 +57,7 @@ function App() {
               }
             />
             
-            <img className='h-6 max-[1200]:h-4 p-1' onClick={submitCity} src={search} alt="search" />
+            <img className='h-8 p-1' onClick={submitCity} src={search} alt="search" />
           </div>
         </div>
         <div className=' absolute top-40 max-md:w-[350px]  flex max-lg:flex-col justify-center items-center '>
