@@ -56,7 +56,8 @@ function App() {
                 }
               }
             />
-            <img className='h-6 max-[1200]:h-4 p-1' src={search} alt="search" />
+            
+            <img className='h-6 max-[1200]:h-4 p-1' onClick={submitCity} src={search} alt="search" />
           </div>
         </div>
         <div className=' absolute top-40 max-md:w-[350px]  flex max-lg:flex-col justify-center items-center '>
