@@ -49,7 +49,7 @@ setInterval(getTime, 1000);
   return (
     <>
     
-    <div className=' max-md:w-[382px] md:h-[434px] backdrop-blur-lg border pt-10 p-6 m-3 rounded-xl flex-col justify-center items-center'>
+    <div className=' max-md:w-[382px] md:h-[434px] shadow-2xl backdrop-blur-lg pt-10 p-6 m-3 rounded-xl flex-col justify-center items-center'>
       <div className='flex font-bold justify-center items-center gap-5 text-2xl'>
         <img src={icon} alt="weather icon" className=' w-24 h-24' />
         <p>{currentInfo.temp}°C</p>
