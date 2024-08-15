@@ -14,7 +14,6 @@ const Minicard = ({image,sec,TimeZone,temp}) => {
 
 const getIcon =(image)=>{
 
-console.log(image)
   if(image){
     if(image.includes("cloud")) return cloud;
     if(image.includes('storm')) return storm;

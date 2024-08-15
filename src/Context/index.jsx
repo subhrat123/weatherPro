@@ -9,8 +9,40 @@ export const StateContextProvider = ({ children }) => {
     const [lon, setlon] = useState("");
     const [lat, setlat] = useState("");
     const [wsp, setwsp] = useState("");
-    const [place, setplace] = useState('pune');
+    const [place, setplace] = useState('delhi');
     const [vis, setVis] = useState("")
+   
+    const getCurrentLocation=()=>{
+        if(navigator.geolocation){
+            navigator.geolocation.getCurrentPosition(
+                (position)=>{
+                    const latitude=position.coords.latitude;
+                    const longitude=position.coords.longitude;
+                    getcity(latitude,longitude);
+                }
+            )
+        }
+    }
+
+    async function getcity(latitude,longitude){
+        const apiUrl = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
+        try{
+            const res=await fetch(apiUrl);
+            const data=await res.json();
+            //console.log(data.address.state_district.split(" ")[0].toLowerCase());
+            setplace(data.address.state_district.split(" ")[0].toLowerCase())
+        }catch(e){
+            console.log("error in getcity function");
+        }
+    }
+
+    useEffect(() => {
+      getCurrentLocation();
+    }, [])
+    
+
+
+
 
 
     const fetchedData = (data) => {
