@@ -9,8 +9,8 @@ export const StateContextProvider = ({ children }) => {
     const [lon, setlon] = useState("");
     const [lat, setlat] = useState("");
     const [wsp, setwsp] = useState("");
-    const [place, setplace] = useState('delhi');
     const [vis, setVis] = useState("")
+    const [place, setplace] = useState('delhi');
    
     const getCurrentLocation=()=>{
         if(navigator.geolocation){
@@ -19,6 +19,7 @@ export const StateContextProvider = ({ children }) => {
                     const latitude=position.coords.latitude;
                     const longitude=position.coords.longitude;
                     getcity(latitude,longitude);
+                    console.log(position);
                 }
             )
         }
@@ -29,7 +30,7 @@ export const StateContextProvider = ({ children }) => {
         try{
             const res=await fetch(apiUrl);
             const data=await res.json();
-            //console.log(data.address.state_district.split(" ")[0].toLowerCase());
+            console.log(data);
             setplace(data.address.state_district.split(" ")[0].toLowerCase())
         }catch(e){
             console.log("error in getcity function");
