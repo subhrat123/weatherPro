@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Clear from '../assets/Images/Clear.jpg';
-import Cloudy from '../assets/Images/Cloudy.jpg';
+import Cloudy from '../assets/Images/Cloud.jpg';
 import Fog from '../assets/Images/Fog.png';
 import Rainy from '../assets/Images/Rainy.jpg';
 import Snow from '../assets/Images/Snow.jpg';
@@ -37,7 +37,8 @@ useEffect(() => {
 
 
   return (
-    <img src={Img} alt="bgimage" className=' fixed object-cover h-screen w-screen left-0 top-0 -z-[10]' />
+    <img src={Img} alt="" className=' fixed object-cover h-screen w-screen left-0 top-0 -z-[10] bg-cyan-200'/>
+    // <div className=' fixed object-cover h-screen w-screen left-0 top-0 -z-[10] bg-cyan-300'></div>
   );
 };
 

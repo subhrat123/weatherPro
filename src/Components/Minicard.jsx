@@ -38,8 +38,8 @@ setIcon( getIcon(image?.toLowerCase())) ;
 
   return (
     <div>
-      <div className=' flex p-2 lg:w-auto shadow-xl flex-col w-[147px] h-auto rounded-lg m-4 justify-center gap-3 items-center backdrop-blur-xl '>
-        <img src={Icon} alt="icon" className='w-20 h-20'/>
+      <div className=' flex p-2 shadow-xl flex-col w-[147px] h-auto rounded-lg m-4 justify-center gap-3 items-center backdrop-blur-xl '>
+        <img src={Icon} alt="icon" className='w-20 drop-shadow-2xl h-30'/>
         <div>{day}</div>
         <div className=' text-xl font-extrabold'>{temp}°C</div>
       </div>

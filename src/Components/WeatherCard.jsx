@@ -49,9 +49,9 @@ setInterval(getTime, 1000);
   return (
     <>
     
-    <div className=' max-md:w-[382px] md:h-[434px] shadow-2xl backdrop-blur-lg pt-10 p-6 m-3 rounded-xl flex-col justify-center items-center'>
+    <div className=' max-md:w-[382px] md:h-[434px] drop-shadow-lg shadow-2xl backdrop-blur-lg pt-10 p-6 m-3 rounded-xl flex-col justify-center items-center'>
       <div className='flex font-bold justify-center items-center gap-5 text-2xl'>
-        <img src={icon} alt="weather icon" className=' w-24 h-24' />
+        <img src={icon} alt="weather icon" className=' drop-shadow-lg w-32 h-32' />
         <p>{currentInfo.temp}°C</p>
       </div>
       <div className='text-center m-2 capitalize font-bold'>{Place}</div>
@@ -60,11 +60,11 @@ setInterval(getTime, 1000);
         <div>{Time}</div>
       </div>
       <div className='flex justify-center items-center gap-3'>
-        <div className='w-40 bg-blue-500 p-2 rounded'>
+        <div className='w-40 bg-blue-500 drop-shadow-lg p-2 rounded'>
           <p>Wind Speed</p>
           <p>{windspeed} km/h</p>
         </div>
-        <div className='w-40 bg-green-500 p-2 rounded'>
+        <div className='w-40 bg-green-400 drop-shadow-md p-2 rounded'>
           <p>Humidity</p>
           <p>{currentInfo.humidity}%</p>
         </div>
