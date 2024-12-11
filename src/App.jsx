@@ -16,7 +16,8 @@ function App() {
     vis,
     place } = useStateContext();
 
-  const { Data, TimeZone } = useContext(forecastContext);
+  const { Data } = useContext(forecastContext);
+
 
 
   const [input, setInput] = useState("");
@@ -73,19 +74,18 @@ function App() {
           />
           <div className=' flex flex-col items-center justify-center'>
 
-            <div className=' text-2xl font-bold'>7 Day Forecast</div>
+            <div className=' text-2xl font-bold'>5 Day Forecast</div>
 
             <div className=' lg:w-[39vw] max-sm:w-[360px] h-auto flex justify-between flex-wrap items-center' >
 
               {
-                Data?.slice(1, 7).map(curr => {
+                Data?.map(curr => {
                   return (
                     <Minicard
                       key={curr.dt}
-                      image={curr.weather[0].main}
-                      TimeZone={TimeZone}
-                      sec={curr.dt}
-                      temp={curr.temp.day}
+                      image={curr.weather[0].main}                  
+                      sec={curr.dt_txt}
+                      temp={curr.main.temp}
                     />
                   )
                 })

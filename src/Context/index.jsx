@@ -11,36 +11,36 @@ export const StateContextProvider = ({ children }) => {
     const [wsp, setwsp] = useState("");
     const [vis, setVis] = useState("")
     const [place, setplace] = useState('delhi');
-   
-    const getCurrentLocation=()=>{
-        if(navigator.geolocation){
+
+    const getCurrentLocation = () => {
+        if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(
-                (position)=>{
-                    const latitude=position.coords.latitude;
-                    const longitude=position.coords.longitude;
-                    getcity(latitude,longitude);
+                (position) => {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    getcity(latitude, longitude);
                     console.log(position);
                 }
             )
         }
     }
 
-    async function getcity(latitude,longitude){
+    async function getcity(latitude, longitude) {
         const apiUrl = `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`;
-        try{
-            const res=await fetch(apiUrl);
-            const data=await res.json();
+        try {
+            const res = await fetch(apiUrl);
+            const data = await res.json();
             console.log(data);
             setplace(data.address.state_district.split(" ")[0].toLowerCase())
-        }catch(e){
+        } catch (e) {
             console.log("error in getcity function");
         }
     }
 
     useEffect(() => {
-      getCurrentLocation();
+        getCurrentLocation();
     }, [])
-    
+
 
 
 
@@ -58,9 +58,9 @@ export const StateContextProvider = ({ children }) => {
         setVis(visibility);
     }
 
-    const apiKey=import.meta.env.VITE_API_KEY_1;
+    const apiKey = import.meta.env.VITE_API_KEY_1;
 
-    
+
     const currentWeather = async () => {
         try {
             const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}&units=metric`);

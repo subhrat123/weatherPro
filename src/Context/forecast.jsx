@@ -5,23 +5,31 @@ export const forecastContext = createContext();
 
 export const ForecastProvider = ({ children, lat, lon }) => {
     const [Data, setData] = useState([]);
-    const [TimeZone, setTimeZone] = useState("");
+    //const [TimeZone, setTimeZone] = useState("");
 
     const apiKey=import.meta.env.VITE_API_KEY_2;
 
     const fetchedData = (info) => {
-        const { timezone, daily } = info;
-        setData(daily);
-        setTimeZone(timezone);
+        // const { timezone, daily } = info;
+        // setData(daily);
+        // setTimeZone(timezone);
+        if(!info) {
+           console.log("no info found");
+        }
+        const time=info[0].dt_txt.split(" ")[1];
+        const daily= info.filter((data)=>data.dt_txt.endsWith(time));
+        console.log(daily);
+       setData(daily);
     };
 
     const fetchData = async (latitude, longitude) => {
         try {
             const res = await fetch(
-                `https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&exclude=current,minutely,hourly,alerts&appid=${apiKey}&units=metric`
+                `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`
             );
             const data = await res.json();
-            fetchedData(data);
+            fetchedData(data.list);
+            console.log(data.list);
         } catch (e) {
             console.log(e);
         }
@@ -40,7 +48,6 @@ export const ForecastProvider = ({ children, lat, lon }) => {
         <forecastContext.Provider
             value={{
                 Data,
-                TimeZone,
             }}
         >
             {children}
