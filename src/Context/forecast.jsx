@@ -29,7 +29,7 @@ export const ForecastProvider = ({ children, lat, lon }) => {
             );
             const data = await res.json();
             fetchedData(data.list);
-            console.log(data.list);
+            // console.log(data.list);
         } catch (e) {
             console.log(e);
         }

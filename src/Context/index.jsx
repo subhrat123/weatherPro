@@ -49,7 +49,7 @@ export const StateContextProvider = ({ children }) => {
     const fetchedData = (data) => {
 
         const { weather, coord, wind, main, visibility, dt } = data;
-
+        console.log(weather);
         setweather(weather[0].main.toLowerCase());
         setlon(coord.lon);
         setlat(coord.lat);
@@ -64,6 +64,7 @@ export const StateContextProvider = ({ children }) => {
     const currentWeather = async () => {
         try {
             const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${place}&appid=${apiKey}&units=metric`);
+            // console.log(await res.json());
             fetchedData(await res.json());
         }
         catch (e) {
